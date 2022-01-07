@@ -1,3 +1,3 @@
 # Estudos iniciais em TypeScript
 
-Curso introdutório da Alura.
+Repositório do projeto feito durante os cursos de typescript da alura.

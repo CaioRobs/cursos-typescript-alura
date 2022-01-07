@@ -5,10 +5,10 @@ export abstract class View<T> {
     this.element = document.querySelector(seletor);
   }
 
-  update(data: T): void {
+  public update(data: T): void {
     const template = this.template(data);
     this.element.innerHTML = template;
   }
 
-  abstract template(_model: T): string;
+  protected abstract template(_model: T): string;
 }

@@ -2,7 +2,12 @@ export abstract class View<T> {
   protected element: HTMLDivElement;
   private escapar = false;
   constructor(seletor: string, escapar?: boolean) {
-    this.element = document.querySelector(seletor);
+    const element = document.querySelector(seletor);
+    if (element) {
+      this.element = element as HTMLDivElement;
+    } else {
+      throw Error(`seletor ${seletor} nao existe no DOM`);
+    }
     if (escapar) this.escapar = escapar;
   }
 

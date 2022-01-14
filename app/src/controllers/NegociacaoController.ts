@@ -1,3 +1,4 @@
+import { logExecutionTime } from "../decorators/executionTimeLogger.js";
 import { Weekdays } from "../enums/Weekdays.js";
 import { Negociacao } from "../models/negociacao.js";
 import { Negociacoes } from "../models/negociacoes.js";
@@ -21,7 +22,9 @@ export class NegociacaoController {
     this.negociacoesView.update(this.negociacoes);
   }
 
+  @logExecutionTime()
   public adiciona(): void {
+    // aqui tem um comentario. na dist nao
     const negociacao = Negociacao.criaDeStrings(
       this.inputData.value,
       this.inputQuantidade.value,

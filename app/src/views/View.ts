@@ -1,3 +1,5 @@
+import { logExecutionTime } from "../decorators/executionTimeLogger.js";
+
 export abstract class View<T> {
   protected element: HTMLDivElement;
   private escapar = false;
@@ -11,6 +13,7 @@ export abstract class View<T> {
     if (escapar) this.escapar = escapar;
   }
 
+  @logExecutionTime()
   public update(data: T): void {
     let template = this.template(data);
     if (this.escapar) {

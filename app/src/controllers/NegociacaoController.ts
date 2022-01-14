@@ -24,7 +24,7 @@ export class NegociacaoController {
 
   @logExecutionTime()
   public adiciona(): void {
-    // aqui tem um comentario. na dist nao
+    // aqui tem um comentario. na dist nao, por conta da config removeComments
     const negociacao = Negociacao.criaDeStrings(
       this.inputData.value,
       this.inputQuantidade.value,

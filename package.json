@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon app/dist/js/teste.js",
+    "dev": "concurrently \"npm run watch\" \"nodemon dist/js/estudos/index.js\"",
     "server": "lite-server --baseDir=app",
     "start": "concurrently \"npm run watch\" \"npm run server\"",
     "compile": "tsc",
@@ -17,5 +17,6 @@
     "lite-server": "^2.6.1",
     "nodemon": "^2.0.15",
     "typescript": "^4.2.2"
-  }
+  },
+  "type": "module"
 }

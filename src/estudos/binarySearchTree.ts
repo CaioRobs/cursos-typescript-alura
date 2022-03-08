@@ -41,7 +41,7 @@ const verifyNextLayer = (layer: BSTNode[]) => {
   return newLayer;
 };
 
-function main() {
+export function main() {
   const secondLine = [
     "1",
     "3",
@@ -75,5 +75,3 @@ function main() {
   }
   console.log(height);
 }
-
-main();
